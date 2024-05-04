@@ -1,0 +1,48 @@
+mport nltk
+import random
+from nltk.chat.util import Chat, reflections
+
+# Define the chatbot responses
+pairs = [
+    [
+        r"hi|hello|hey",
+        ["Hello", "Hey there", "Hi"]
+    ],
+    [
+        r"how are you ?",
+        ["I'm doing well, thank you!", "I'm great, thanks for asking!"]
+    ],
+    [
+        r"what is your name ?",
+        ["You can call me Chatbot.", "I'm just a chatbot.", "I'm Chatbot!"]
+    ],
+    [
+        r"(.*) your name ?",
+        ["You can call me Chatbot.", "I'm just a chatbot.", "I'm Chatbot!"]
+    ],
+ [
+        r"(.*) (age|old) ?",
+        ["I'm a computer program, I don't have an age!", "I'm timeless!"]
+    ],
+    [
+        r"(.*) (created|made) ?",
+        ["I was created by a developer using Python and nltk.", "I came into existence through code."]
+    ],
+    [
+        r"(.*) (location|city) ?",
+        ["I'm a virtual chatbot, so I can be anywhere you want me to be!", "I exist in the digital realm."]
+    ],
+    [
+        r"bye|goodbye",
+        ["Goodbye!", "Bye!", "Catch you later!"]
+    ]
+]
+
+# Create the chatbot
+chatbot = Chat(pairs, reflections)
+
+# Start chatting
+chatbot.converse()
+
+
+
